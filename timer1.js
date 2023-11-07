@@ -1,7 +1,9 @@
 const userAlarms = process.argv.slice(2);
 
 for (const alarm of userAlarms) {
-  console.log(alarm);
+  setTimeout(() => {
+    console.log(alarm);
+  }, 1000);
 }
 
 
