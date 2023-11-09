@@ -10,16 +10,18 @@
 // }
 
 const stdin = process.stdin;
-// don't worry about these next two lines of setup work.
+
 stdin.setRawMode(true);
 stdin.setEncoding('utf8');
 
 stdin.on('data', (key) => {
   if (key === "b") {
     process.stdout.write('\x07');
-  }
-
-  if (key === '\u0003') {
+  } else if (key === '\u0003') {
     process.exit();
   }
+  if (key > 0) {
+    console.log(`setting alarm for ${key} seconds`);
+  }
+
 });
