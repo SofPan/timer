@@ -16,9 +16,15 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.prompt(input => {
-  if (input === '\u0003') {
+readline.emitKeypressEvents(process.stdin);
 
-    rl.close();
+
+if (rl.input === '\u0003') {
+  rl.close();
+}
+
+process.stdin.on('keypress', (key) => {
+  if (key === "b") {
+    process.stdout.write('\x07');
   }
 });
