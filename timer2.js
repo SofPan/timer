@@ -9,15 +9,8 @@
 //   }, alarm * 1000);
 // }
 
-const readline = require('readline');
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-if (rl.input === '\u0003') {
-  rl.close();
+if (process.stdin === '\u0003') {
+  process.exit();
 }
 
 process.stdin.on('keypress', (key) => {
