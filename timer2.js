@@ -9,19 +9,17 @@
 //   }, alarm * 1000);
 // }
 
-const readline = require('readline');
+const stdin = process.stdin;
+// don't worry about these next two lines of setup work.
+stdin.setRawMode(true);
+stdin.setEncoding('utf8');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-if (process.stdin === '\u0003') {
-  process.exit();
-}
-
-process.stdin.on('keypress', (key) => {
+stdin.on('data', (key) => {
   if (key === "b") {
     process.stdout.write('\x07');
+  }
+
+  if (key === '\u0003') {
+    process.exit();
   }
 });
