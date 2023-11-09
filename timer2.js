@@ -16,3 +16,7 @@ stdin.on('data', (key) => {
     }, key * 1000);
   }
 });
+
+process.on('exit', () => {
+  console.log("Thanks for using me, ciao!");
+});
