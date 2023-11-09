@@ -9,6 +9,13 @@
 //   }, alarm * 1000);
 // }
 
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
 if (process.stdin === '\u0003') {
   process.exit();
 }
