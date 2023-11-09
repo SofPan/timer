@@ -16,9 +16,6 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-readline.emitKeypressEvents(process.stdin);
-
-
 if (rl.input === '\u0003') {
   rl.close();
 }
